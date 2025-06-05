@@ -4,11 +4,11 @@ import fetch from 'node-fetch';
 import cors from 'cors';
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT_NUM;
 
 const API_KEY = process.env.TASHU_API_KEY;
 const API_URL = 'https://bikeapp.tashu.or.kr:50041/v1/openapi/station';
-console.log(API_KEY)
+
 app.use(cors());
 
 app.get('/api/station', async (req, res) => {
