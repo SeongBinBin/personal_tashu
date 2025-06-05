@@ -11,6 +11,10 @@ const API_URL = 'https://bikeapp.tashu.or.kr:50041/v1/openapi/station';
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('Tashu API 서버가 정상적으로 동작 중입니다.');
+});
+
 app.get('/api/station', async (req, res) => {
     try {
         const response = await fetch(API_URL, {
