@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './MainSection.css'
 
 function MainSection() {
     const [apiData, setApiData] = useState([]);
