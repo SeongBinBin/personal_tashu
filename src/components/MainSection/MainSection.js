@@ -6,7 +6,7 @@ function MainSection() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await fetch('http://localhost:8080/api/station');
+            const res = await fetch('https://your-koyeb-backend.koyeb.app/api/station');
             if (!res.ok) throw new Error(`API 호출 실패 (status: ${res.status})`);
             const result = await res.json();
             setApiData(result.results || []);
