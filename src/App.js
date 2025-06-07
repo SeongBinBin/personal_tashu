@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import HeaderSection from './components/HeaderSection/HeaderSection.js';
 import MainSection from './components/MainSection/MainSection.js';
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <div className="App">
         <HeaderSection />
         <Routes>
@@ -15,7 +15,7 @@ function App() {
           {/* <Route path="/about" element={<About />} /> */}
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
