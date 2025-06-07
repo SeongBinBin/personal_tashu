@@ -11,9 +11,6 @@ const API_URL = 'https://bikeapp.tashu.or.kr:50041/v1/openapi/station';
 
 app.use(cors());
 
-// React 빌드 결과를 정적 파일로 제공
-app.use(express.static('build'));
-
 // API 라우트
 app.get('/api/station', async (req, res) => {
     try {

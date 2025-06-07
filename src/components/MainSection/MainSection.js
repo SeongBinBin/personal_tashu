@@ -16,14 +16,16 @@ function MainSection() {
                 const res = await fetch(`${BASE_URL}/api/station`);
                 if (!res.ok) throw new Error(`API 호출 실패 (status: ${res.status})`);
                 const result = await res.json();
+                console.log("API 응답:", result); // 추가
                 setApiData(result.results || []);
             } catch (error) {
                 console.error("데이터 불러오기 실패:", error);
             }
         };
-
         fetchData();
     }, [BASE_URL]);
+
+    console.log(BASE_URL)
 
     const filteredData = apiData.filter(data =>
         data.name && data.name.includes(search)
