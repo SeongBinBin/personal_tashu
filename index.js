@@ -11,10 +11,10 @@ const API_URL = 'https://bikeapp.tashu.or.kr:50041/v1/openapi/station';
 
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('Tashu API 서버가 정상적으로 동작 중입니다.');
-});
+// React 빌드 결과를 정적 파일로 제공
+app.use(express.static('build'));
 
+// API 라우트
 app.get('/api/station', async (req, res) => {
     try {
         const response = await fetch(API_URL, {
@@ -30,6 +30,10 @@ app.get('/api/station', async (req, res) => {
     }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 API 서버가 포트 ${PORT}에서 실행 중입니다.`);
+app.listen(PORT, () => {
+    console.log(`API 서버가 포트 ${PORT}에서 실행 중입니다.`);
 });
+
+// app.listen(PORT, '0,0,0,0', () => {
+//     console.log(`API 서버가 포트 ${PORT}에서 실행 중입니다.`);
+// });
